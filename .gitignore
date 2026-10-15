@@ -1,0 +1,19 @@
+# CCS and SysConfig build outputs
+/Debug/
+/Release/
+*.o
+*.d
+*.map
+*.out
+*.elf
+*.hex
+*.bin
+*.log
+
+# Local IDE and operating-system state
+.metadata/
+.history/
+.DS_Store
+Thumbs.db
+.vscode/*.log
+

@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "MSPM0G3507_Config",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Debug",
+                "${workspaceFolder}/User",
+                "${workspaceFolder}/Drivers/MSPM0",
+                "${workspaceFolder}/Drivers/MPU6050",
+                "${workspaceFolder}/Drivers/OLED_Hardware_I2C",
+                "C:/ti/mspm0_sdk_2_10_00_04/source",
+                "C:/ti/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include",
+                "C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c"
+            ],
+            "compilerArgs": [
+                "-march=thumbv6m",
+                "-mcpu=cortex-m0plus",
+                "-mfloat-abi=soft",
+                "-mthumb"
+            ],
+            "defines": [
+                "__MSPM0G3507__",
+                "__USE_SYSCONFIG__",
+                "MOTION_DRIVER_TARGET_MSPM0",
+                "MPU6050"
+            ],
+            "compilerPath": "C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "windows-clang-arm"
+        }
+    ],
+    "version": 4
+}

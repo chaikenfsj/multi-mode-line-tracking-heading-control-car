@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CCS: Build 24ht",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/.vscode/ccs.ps1", "-Action", "Build"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": { "hide": false, "label": "$(tools) CCS 编译", "detail": "编译整个 24ht 工程" }
+            },
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": { "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/Debug"] },
+            "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+            "runOptions": { "instanceLimit": 1 }
+        },
+        {
+            "label": "CCS: Build and Flash 24ht (J-Link)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/.vscode/ccs.ps1", "-Action", "Flash"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": { "hide": false, "label": "$(arrow-down) CCS 烧录", "detail": "检测 J-Link，编译、烧录、校验并复位" }
+            },
+            "problemMatcher": { "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/Debug"] },
+            "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+            "runOptions": { "instanceLimit": 1 }
+        },
+        {
+            "label": "CCS: Open 24ht in Code Composer Studio",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/.vscode/ccs.ps1", "-Action", "Open"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "statusbar": { "hide": false, "label": "$(link-external) 打开 CCS", "detail": "在完整 CCS 中打开整个 24ht，使用原生调试界面" }
+            },
+            "problemMatcher": []
+        }
+    ]
+}
